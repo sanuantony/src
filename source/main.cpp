@@ -1,59 +1,56 @@
 #include "../header/helper.h"
 #include "../header/dsa.h"
-//#include <cstdlib>
 
 int main()
 {
-	//system("cls");
+	int choice = 0;
+	int input = 0;
 	println("Starting.....");
-	auto head = Insert(19, nullptr);
-	Insert(8, head);
-	Insert(10, head);
-	Insert(12, head);
-	Insert(2, head);
-	Insert(16, head);
-	Insert(3, head);
-	// int choice = 0;
-	// do
-	// {
-	// 	println("");
-	// 	println("1). Insert at the end ");
-	// 	println("2). Insert at a position (number, positio) ");
-	// 	println("Enter you choice");
-	// 	println("Enter you choice");
-	// 	println("Enter you choice");
-	// 	println("6). Exit");
-	// 	println("Enter you choice : ");
-	// 	std::cin >> choice;
+	Node *head = nullptr;
+	do
+	{
+		println("");
+		println("1). Insert at the end ");
+		println("2). Insert at a position (number, position) ");
+		println("3). Delete");
+		println("4). Sort");
+		println("5). Print list");
+		println("6). Exit");
+		println("Enter you choice : ");
+		std::cin >> choice;
+		system("cls");
 
-	// 	switch (choice)
-	// 	{
-	// 	case 1:
-	// 		println("Enter number you want to insert: ");
-	// 		std::cin >> choice;
-	// 		Insert(choice, head);
-	// 		break;
-	// 	case 2:
-	// 		println("Enter the number and position you want to insert: ");
-	// 		int position;
-	// 		std::cin >> choice >> position;
-	// 		head = InsertAtPosition(choice, position, head);
-	// 		break;
-	// 	case 3:
-	// 		PrintList(head);
-	// 	default:
-	// 		break;
-	// 	}
-	// } while (choice != 6);
-	head = InsertAtPosition(15, 1, head);
-	head = Delete(15,head);
-	println(head->data);
-	println(head->next->data);
-	println(head->next->next->data);
-	std::cout << "\n";
-	PrintList(head);
-	Delete(3,head);
-	std::cout << "\n";
-	PrintList(head);
+		switch (choice)
+		{
+		case 1:
+			println("Enter number you want to insert: ");
+			std::cin >> input;
+			if (head == nullptr)
+				head = Insert(input, head);
+			else
+				Insert(input, head);
+			break;
+		case 2:
+			println("Enter the number and position you want to insert: ");
+			int position;
+			std::cin >> input >> position;
+			head = InsertAtPosition(input, position, head);
+			break;
+		case 3:
+			println("Enter the number to be deleted from the list: ");
+			std::cin >> input;
+			Delete(input, head);
+			break;
+		case 4:
+			SortList(head);
+			break;
+		case 5:
+			PrintList(head);
+		default:
+			break;
+		}
+	} while (6 != choice);
+	println("Exiting program.....");
+
 	return 0;
 }

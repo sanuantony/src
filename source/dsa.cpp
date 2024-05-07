@@ -73,7 +73,7 @@ Node *Delete(int data, Node *head)
             auto temp = current;
             current = current->next;
             previous->next = current;
-            delete(temp);
+            delete (temp);
             return head;
         }
         previous = current;
@@ -97,6 +97,20 @@ void PrintList(Node *head)
         current = current->next;
     }
 }
-void SortList(Node *head)
+ void SortList(Node *head)
 {
+    if (head == nullptr || head->next == nullptr)
+        return ;
+    auto current = head;
+    while (current != nullptr)
+    {
+        auto counter = current;
+        while (counter != nullptr)
+        {
+            if (current->data > counter->data)
+                std::swap(current->data, counter->data);
+            counter = counter->next;
+        }
+        current = current->next;
+    }
 }

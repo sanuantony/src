@@ -2,11 +2,11 @@
 
 
 void print(const char* message) {
-    std::cout << message;
+    std::cout << message<<std::endl;
 }
 
 void println(const char* message) {
-    std::cout <<"\n"<< message;
+    std::cout <<"\n"<< message<<std::endl;
 }
 
 void print(int message) {
