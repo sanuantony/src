@@ -21,6 +21,26 @@ int main()
 		system("cls");
 		switch (choice)
 		{
+		case 0:
+			if (head == nullptr)
+				head = Insert(10, head);
+			else
+				Insert(10, head);
+			Insert(9, head);
+			Insert(8, head);
+			Insert(7, head);
+			Insert(6, head);
+			Insert(5, head);
+			Insert(4, head);
+			PrintList(head);
+			InsertAtPosition(-48, 4, head);
+			Delete(6, head);
+			PrintList(head);
+			InsertAtPosition(63, 5, head);
+			PrintList(head);
+			SortList(head);
+			PrintList(head);
+			break;
 		case 1:
 			println("Enter number you want to insert: ");
 			std::cin >> input;
@@ -41,10 +61,10 @@ int main()
 			Delete(input, head);
 			break;
 		case 4:
-			system("cls");
 			SortList(head);
 			break;
 		case 5:
+			system("cls");
 			PrintList(head);
 		default:
 			break;
