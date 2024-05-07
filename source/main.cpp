@@ -19,7 +19,6 @@ int main()
 		println("Enter you choice : ");
 		std::cin >> choice;
 		system("cls");
-
 		switch (choice)
 		{
 		case 1:
@@ -42,6 +41,7 @@ int main()
 			Delete(input, head);
 			break;
 		case 4:
+			system("cls");
 			SortList(head);
 			break;
 		case 5:
