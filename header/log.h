@@ -13,6 +13,7 @@ private:
     Level m_LogLevel;
 
 public:
+    Log();
     void SetLogLevel(Level logLevel);
     void PrintError(const char *message);
     void PrintWarning(const char *message);

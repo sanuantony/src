@@ -1,5 +1,11 @@
 #include "../header/log.h"
 #include <iostream>
+
+Log::Log()
+{
+    m_LogLevel = Warning;
+}
+
 void Log::SetLogLevel(Log::Level logLevel)
 {
     m_LogLevel = logLevel;
